@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ServerHub - Comunidade de Minecraft</title>
   
-  <!-- Fonte Inter (Google Fonts) -->
+  <!-- Fonte Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,7 +14,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-    /* RESET & VARIAVEIS DA PALETA */
     * {
       margin: 0;
       padding: 0;
@@ -51,7 +50,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 24px 8%;
+      padding: 20px 8%;
       background: rgba(7, 7, 13, 0.85);
       backdrop-filter: blur(12px);
       position: sticky;
@@ -63,88 +62,53 @@
     .logo {
       display: flex;
       align-items: center;
-      gap: 12px;
-      font-size: 1.5rem;
+      gap: 10px;
+      font-size: 1.4rem;
       font-weight: 800;
       text-decoration: none;
       color: var(--text-white);
     }
 
     .logo-icon {
-      width: 40px;
-      height: 40px;
+      width: 38px;
+      height: 38px;
       background: linear-gradient(135deg, #a78bfa, #6d28d9);
-      border-radius: 12px;
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
     }
 
-    .logo-icon i {
-      font-size: 20px;
-      color: #fff;
-    }
+    .logo span { color: var(--purple-light); }
 
-    .logo span {
-      color: var(--purple-light);
-    }
-
-    nav {
-      display: flex;
-      gap: 32px;
-    }
+    nav { display: flex; gap: 24px; }
 
     nav a {
       color: var(--text-gray);
       text-decoration: none;
       font-weight: 500;
-      transition: color 0.3s ease;
-      position: relative;
+      transition: color 0.3s;
     }
 
-    nav a:hover, nav a.active {
-      color: var(--text-white);
-    }
+    nav a:hover, nav a.active { color: var(--text-white); }
 
-    nav a.active::after {
-      content: '';
-      position: absolute;
-      bottom: -6px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: var(--purple-primary);
-      border-radius: 2px;
-      box-shadow: 0 0 8px var(--purple-primary);
-    }
-
-    /* BOTÃO TIKTOK */
     .btn-tiktok {
-      background: #000000;
+      background: #000;
       color: white;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 10px 20px;
-      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 8px;
       text-decoration: none;
+      font-size: 0.85rem;
       font-weight: 600;
       display: flex;
       align-items: center;
       gap: 8px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     }
 
-    .btn-tiktok:hover {
-      transform: translateY(-2px);
-      border-color: #fe2c55;
-      box-shadow: 0 4px 20px rgba(254, 44, 85, 0.3);
-    }
+    .btn-tiktok i { color: #fe2c55; }
 
-    .btn-tiktok i {
-      color: #fe2c55;
-    }
-
-    /* HERO SECTION */
+    /* HERO */
     .hero {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
@@ -156,114 +120,51 @@
     }
 
     .hero-content h1 {
-      font-size: 4rem;
+      font-size: 3.5rem;
       font-weight: 800;
       line-height: 1.1;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
-    .hero-content h1 span {
-      color: var(--purple-light);
-      display: block;
-    }
+    .hero-content h1 span { color: var(--purple-light); }
 
     .hero-description {
-      font-size: 1.25rem;
+      font-size: 1.1rem;
       color: var(--text-gray);
-      margin-bottom: 32px;
-      max-width: 500px;
+      margin-bottom: 28px;
     }
 
-    .hero-description span {
-      color: var(--purple-light);
-      font-weight: 600;
-    }
+    .hero-description span { color: var(--purple-light); font-weight: 600; }
 
-    /* BENEFÍCIOS/FEATURES */
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-bottom: 40px;
-    }
+    .cta-buttons { display: flex; gap: 14px; }
 
-    .feature-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-    }
-
-    .feature-icon {
-      width: 36px;
-      height: 36px;
-      background: rgba(139, 92, 246, 0.15);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--purple-light);
-    }
-
-    .feature-info h4 {
-      font-size: 0.95rem;
-      font-weight: 600;
-    }
-
-    .feature-info p {
-      font-size: 0.8rem;
-      color: var(--text-gray);
-    }
-
-    /* BOTÕES DE AÇÃO */
-    .cta-buttons {
-      display: flex;
-      gap: 16px;
-    }
-
-    .btn-primary {
+    .btn-hero-primary {
       background: linear-gradient(135deg, #8b5cf6, #6d28d9);
       color: white;
-      padding: 14px 28px;
-      border-radius: 12px;
+      padding: 12px 24px;
+      border-radius: 10px;
       text-decoration: none;
       font-weight: 600;
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      box-shadow: 0 4px 25px rgba(109, 40, 217, 0.5);
-      transition: all 0.3s ease;
-      cursor: pointer;
-      border: none;
+      gap: 8px;
     }
 
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 30px rgba(139, 92, 246, 0.7);
-    }
-
-    .btn-secondary {
+    .btn-hero-secondary {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid var(--border-color);
       color: white;
-      padding: 14px 28px;
-      border-radius: 12px;
+      padding: 12px 24px;
+      border-radius: 10px;
       text-decoration: none;
       font-weight: 600;
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      transition: all 0.3s ease;
-      cursor: pointer;
+      gap: 8px;
     }
 
-    .btn-secondary:hover {
-      background: rgba(139, 92, 246, 0.1);
-      border-color: var(--purple-primary);
-    }
-
-    /* PREVIEW ILUSTRATIVO */
+    /* VISUAL CUBE HERO */
     .hero-visual {
-      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -271,282 +172,185 @@
 
     .visual-card {
       width: 100%;
-      max-width: 450px;
-      height: 380px;
+      max-width: 380px;
+      height: 300px;
       background: linear-gradient(180deg, #131127 0%, #090814 100%);
       border: 1px solid var(--border-color);
-      border-radius: 24px;
-      box-shadow: 0 0 50px rgba(109, 40, 217, 0.25);
+      border-radius: 20px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      position: relative;
-    }
-
-    .visual-glow {
-      position: absolute;
-      width: 250px;
-      height: 250px;
-      background: var(--purple-glow);
-      filter: blur(90px);
-      opacity: 0.5;
-      z-index: 0;
     }
 
     .cube-box {
-      width: 100px;
-      height: 100px;
+      width: 80px;
+      height: 80px;
       background: linear-gradient(135deg, #a78bfa, #6d28d9);
-      border-radius: 20px;
+      border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 0 30px rgba(139, 92, 246, 0.6);
-      z-index: 1;
-      margin-bottom: 24px;
+      margin-bottom: 16px;
+      box-shadow: 0 0 25px rgba(139, 92, 246, 0.5);
     }
 
-    .cube-box i {
-      font-size: 50px;
-      color: white;
-    }
+    .cube-box i { font-size: 40px; color: white; }
 
-    .visual-badge {
-      z-index: 1;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border-color);
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      color: var(--purple-light);
-    }
-
-    /* ESTILOS DE SEÇÕES GERAIS */
+    /* SEÇÕES GERAIS */
     .custom-section {
-      padding: 80px 8%;
+      padding: 60px 8%;
       max-width: 1400px;
       margin: 0 auto;
       width: 100%;
     }
 
     .section-title {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       font-weight: 800;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
-    .section-title span {
-      color: var(--purple-light);
-    }
+    .section-title span { color: var(--purple-light); }
 
     .section-subtitle {
       color: var(--text-gray);
-      font-size: 1.1rem;
-      margin-bottom: 40px;
+      font-size: 0.95rem;
+      margin-bottom: 28px;
     }
 
+    /* FILTROS */
+    .version-filter-container {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .version-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      color: var(--text-white);
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .version-btn.active {
+      background: var(--purple-primary);
+      border-color: var(--purple-light);
+      box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+    }
+
+    /* GRIDS */
     .content-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
     }
 
-    /* CARD DE CONTEÚDO (SERVIDORES & MODS) */
     .item-card {
-      background: linear-gradient(180deg, #131127 0%, #0d0c18 100%);
+      background: #0d0c18;
       border: 1px solid var(--border-color);
-      border-radius: 20px;
-      padding: 30px;
-      position: relative;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 18px;
+      padding: 22px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
 
-    .item-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
-      border-color: var(--purple-primary);
-    }
+    .item-card.hide { display: none !important; }
 
     .card-badge {
       display: inline-block;
-      padding: 6px 12px;
-      border-radius: 20px;
-      font-size: 0.75rem;
+      padding: 5px 10px;
+      border-radius: 15px;
+      font-size: 0.7rem;
       font-weight: 700;
       text-transform: uppercase;
-      margin-bottom: 16px;
-      width: fit-content;
+      margin-bottom: 12px;
     }
 
-    .badge-bedrock {
-      background: rgba(16, 185, 129, 0.15);
-      color: #34d399;
-      border: 1px solid rgba(52, 211, 153, 0.3);
-    }
+    .badge-bedrock { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); }
+    .badge-java { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(248, 113, 113, 0.3); }
+    .badge-texture { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
+    .badge-mod { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
 
-    .badge-java {
-      background: rgba(239, 68, 68, 0.15);
-      color: #f87171;
-      border: 1px solid rgba(248, 113, 113, 0.3);
-    }
-
-    .badge-mod {
-      background: rgba(168, 85, 247, 0.15);
-      color: #c084fc;
-      border: 1px solid rgba(168, 85, 247, 0.3);
-    }
-
-    .badge-texture {
-      background: rgba(59, 130, 246, 0.15);
-      color: #60a5fa;
-      border: 1px solid rgba(59, 130, 246, 0.3);
-    }
-
-    .item-card h3 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
+    .item-card h3 { font-size: 1.3rem; margin-bottom: 8px; }
 
     .item-card p {
       color: var(--text-gray);
-      font-size: 0.95rem;
-      margin-bottom: 20px;
-      line-height: 1.5;
+      font-size: 0.85rem;
+      margin-bottom: 16px;
+      line-height: 1.4;
     }
 
     .info-row {
       display: flex;
       justify-content: space-between;
-      align-items: center;
       background: rgba(255, 255, 255, 0.03);
-      padding: 12px 16px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      font-size: 0.9rem;
-    }
-
-    .info-highlight {
-      font-family: monospace;
-      color: var(--purple-light);
-      font-weight: 600;
-    }
-
-    .btn-action {
-      background: var(--purple-primary);
-      color: white;
-      border: none;
-      padding: 12px 16px;
+      padding: 8px 12px;
       border-radius: 8px;
-      font-weight: 600;
-      cursor: pointer;
-      width: 100%;
+      margin-bottom: 8px;
+      font-size: 0.85rem;
+    }
+
+    .info-highlight { color: var(--purple-light); font-weight: 600; word-break: break-all; }
+
+    /* BOTÃO GARANTIDO */
+    .btn-action {
+      background: #8b5cf6 !important;
+      color: #ffffff !important;
+      border: none;
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      text-decoration: none;
-      transition: background 0.2s ease, transform 0.2s ease;
+      margin-top: 15px;
+      cursor: pointer;
     }
 
-    .btn-action:hover {
-      background: var(--purple-glow);
-    }
-
-    /* BARRA DE ESTATÍSTICAS */
-    .stats-bar {
-      margin: 40px 8% 60px 8%;
-      background: rgba(13, 12, 24, 0.8);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 30px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      max-width: 1400px;
-      margin-left: auto;
-      margin-right: auto;
-      backdrop-filter: blur(10px);
-    }
-
-    .stat-item {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .stat-icon {
-      font-size: 28px;
-      color: var(--purple-light);
-    }
-
-    .stat-number {
-      font-size: 1.5rem;
-      font-weight: 700;
-    }
-
-    .stat-label {
-      font-size: 0.85rem;
-      color: var(--text-gray);
-    }
-
-    /* TOAST / NOTIFICAÇÃO */
+    /* TOAST */
     .toast {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
+      bottom: 20px;
+      right: 20px;
       background: #131127;
       border: 1px solid var(--purple-primary);
       color: white;
-      padding: 15px 25px;
-      border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(109, 40, 217, 0.4);
+      padding: 12px 20px;
+      border-radius: 10px;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       z-index: 1000;
       transform: translateY(100px);
       opacity: 0;
       transition: all 0.3s ease;
     }
 
-    .toast.show {
-      transform: translateY(0);
-      opacity: 1;
-    }
+    .toast.show { transform: translateY(0); opacity: 1; }
 
-    /* RESPONSIVIDADE */
-    @media (max-width: 1024px) {
-      .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 40px;
-      }
-      .hero-description {
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .features-grid {
-        justify-content: center;
-      }
-      .cta-buttons {
-        justify-content: center;
-      }
-      .stats-bar {
-        grid-template-columns: repeat(2, 1fr);
-      }
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; text-align: center; }
+      .cta-buttons { justify-content: center; }
+      .hero-visual { display: none; }
     }
 
     @media (max-width: 600px) {
       nav { display: none; }
-      .hero-content h1 { font-size: 2.8rem; }
-      .features-grid { grid-template-columns: 1fr; text-align: left; }
-      .stats-bar { grid-template-columns: 1fr; }
-      .cta-buttons { flex-direction: column; }
+      .hero-content h1 { font-size: 2.5rem; }
     }
   </style>
 </head>
@@ -554,23 +358,20 @@
 
   <!-- NAVBAR -->
   <header>
-    <a href="index.html" class="logo">
-      <div class="logo-icon">
-        <i class="fa-solid fa-cube"></i>
-      </div>
+    <a href="#" class="logo">
+      <div class="logo-icon"><i class="fa-solid fa-cube"></i></div>
       Server<span>Hub</span>
     </a>
 
     <nav>
       <a href="#" class="active">Início</a>
       <a href="#servidores">Servidores</a>
-      <a href="#mods-e-texturas">Mods e Texturas</a>
-      <a href="#planos" onclick="mostrarAviso('Planos e VIPs em breve!')">Planos</a>
-      <a href="#suporte" onclick="mostrarAviso('Canal de suporte aberto!')">Suporte</a>
+      <a href="#mods-e-texturas">Mods & Texturas</a>
     </nav>
 
-    <a href="https://www.tiktok.com/@bomb_pvd" target="_blank" rel="noopener noreferrer" class="btn-tiktok">
-      <i class="fa-brands fa-tiktok"></i> Siga-nos no TikTok
+    <!-- LINK DO TIKTOK ATUALIZADO AQUI -->
+    <a href="https://www.tiktok.com/@serverhubminecraft" target="_blank" class="btn-tiktok">
+      <i class="fa-brands fa-tiktok"></i> TikTok
     </a>
   </header>
 
@@ -578,58 +379,17 @@
   <main class="hero">
     <div class="hero-content">
       <h1>Server<br><span>Hub</span></h1>
-      
-      <p class="hero-description">
-        Encontre, conecte e gerencie os <span>melhores servidores</span>, mods e texturas de Minecraft.
-      </p>
-
-      <div class="features-grid">
-        <div class="feature-item">
-          <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
-          <div class="feature-info">
-            <h4>Confiável</h4>
-            <p>Segurança garantida</p>
-          </div>
-        </div>
-
-        <div class="feature-item">
-          <div class="feature-icon"><i class="fa-solid fa-rocket"></i></div>
-          <div class="feature-info">
-            <h4>Rápido</h4>
-            <p>Performance otimizada</p>
-          </div>
-        </div>
-
-        <div class="feature-item">
-          <div class="feature-icon"><i class="fa-solid fa-users"></i></div>
-          <div class="feature-info">
-            <h4>Comunidade</h4>
-            <p>Conecte-se e cresça</p>
-          </div>
-        </div>
-      </div>
-
+      <p class="hero-description">Encontre, conecte e baixe os <span>melhores recursos</span> para o seu Minecraft.</p>
       <div class="cta-buttons">
-        <a href="#servidores" class="btn-primary">
-          Explorar Servidores <i class="fa-solid fa-arrow-right"></i>
-        </a>
-        
-        <a href="#mods-e-texturas" class="btn-secondary">
-          Mods e Texturas <i class="fa-solid fa-box-open"></i>
-        </a>
+        <a href="#servidores" class="btn-hero-primary">Servidores <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#mods-e-texturas" class="btn-hero-secondary">Mods & Texturas <i class="fa-solid fa-box-open"></i></a>
       </div>
     </div>
 
-    <!-- PAINEL ILUSTRATIVO -->
     <div class="hero-visual">
-      <div class="visual-glow"></div>
       <div class="visual-card">
-        <div class="cube-box">
-          <i class="fa-solid fa-cubes"></i>
-        </div>
-        <div class="visual-badge">
-          <i class="fa-solid fa-bolt"></i> Servidores & Modpacks Online
-        </div>
+        <div class="cube-box"><i class="fa-solid fa-cubes"></i></div>
+        <span style="color: var(--purple-light); font-size: 0.9rem;">Comunidade Minecraft</span>
       </div>
     </div>
   </main>
@@ -637,128 +397,181 @@
   <!-- SEÇÃO DE SERVIDORES -->
   <section id="servidores" class="custom-section">
     <h2 class="section-title">Servidores <span>Disponíveis</span></h2>
-    <p class="section-subtitle">Escolha sua versão e entre diretamente na aventura com a comunidade.</p>
+    <p class="section-subtitle">Escolha seu servidor e divirta-se jogando agora!</p>
 
     <div class="content-grid">
-      
- <!-- SERVIDOR 1: BEDROCK -->
-<div class="item-card">
-  <div>
-    <span class="card-badge badge-bedrock"><i class="fa-solid fa-mobile-screen"></i> Bedrock Edition</span>
-    <h3>Survival Bedrock</h3>
-    <p>Mundo survival otimizado na versão mais atualizada para dispositivos móveis, consoles e Windows 10/11.</p>
-    
-    <div class="info-row">
-      <span>Endereço IP:</span>
-      <span class="info-highlight" id="ip-bedrock">ServerHubBEDROCK.enderman.cloud</span>
-    </div>
-    <div class="info-row">
-      <span>Porta:</span>
-      <span class="info-highlight">44232</span>
-    </div>
-  </div>
+      <!-- BEDROCK -->
+      <div class="item-card">
+        <div>
+          <span class="card-badge badge-bedrock"><i class="fa-solid fa-mobile-screen"></i> Bedrock</span>
+          <h3>Survival Bedrock</h3>
+          <p>Para celulares, consoles e Windows 10/11. Servidor survival leve e otimizado.</p>
+          <div class="info-row"><span>IP:</span><span class="info-highlight">ServerHubBEDROCK.enderman.cloud</span></div>
+          <div class="info-row"><span>Porta:</span><span class="info-highlight">44232</span></div>
+        </div>
+        <button class="btn-action" onclick="copiar('ServerHubBEDROCK.enderman.cloud:44232')">
+          <i class="fa-regular fa-copy"></i> Copiar IP e Porta
+        </button>
+      </div>
 
-  <!-- Botão que copia direto sem JS externo -->
-  <button class="btn-action" onclick="navigator.clipboard.writeText('ServerHubBEDROCK.enderman.cloud:44232'); alert('IP e Porta copiados com sucesso!');">
-    <i class="fa-regular fa-copy"></i> Copiar IP e Porta
-  </button>
-</div>
-
-      <!-- SERVIDOR 2: JAVA -->
+      <!-- JAVA -->
       <div class="item-card">
         <div>
           <span class="card-badge badge-java"><i class="fa-solid fa-desktop"></i> Java Edition</span>
           <h3>Survival Java 1.20.1</h3>
-          <p>Servidor survival clássico na versão 1.20.1 com economia, clans, proteção de terreno e muito mais.</p>
-          
-          <div class="info-row">
-            <span>Versão:</span>
-            <span class="info-highlight">1.20.1</span>
-          </div>
-          <div class="info-row">
-            <span>Endereço IP:</span>
-            <span class="info-highlight" id="ip-java">java.serverhub.com</span>
-          </div>
+          <p>Para computadores. Survival clássico com terrenos, economia e clans.</p>
+          <div class="info-row"><span>Versão:</span><span class="info-highlight">1.20.1</span></div>
+          <div class="info-row"><span>IP:</span><span class="info-highlight">java.serverhub.com</span></div>
         </div>
-
-        <button class="btn-action" onclick="copiarTexto('java.serverhub.com', 'IP Java 1.20.1 copiado com sucesso!')">
-          <i class="fa-regular fa-copy"></i> Copiar IP do Servidor
+        <button class="btn-action" onclick="copiar('java.serverhub.com')">
+          <i class="fa-regular fa-copy"></i> Copiar IP Java
         </button>
       </div>
-
     </div>
   </section>
 
   <!-- SEÇÃO DE MODS E TEXTURAS -->
   <section id="mods-e-texturas" class="custom-section">
     <h2 class="section-title">Mods & <span>Texturas</span></h2>
-    <p class="section-subtitle">Otimize e transforme o visual do seu Minecraft com nossos arquivos verificados.</p>
+    <p class="section-subtitle">Clique nas caixas para filtrar por versão do Minecraft:</p>
 
-    <div class="content-grid">
+    <!-- FILTROS -->
+    <div class="version-filter-container">
+      <button class="version-btn active" onclick="filtrarVersao('all', this)">
+        <i class="fa-solid fa-border-all"></i> Todas
+      </button>
+      <button class="version-btn" onclick="filtrarVersao('1.21', this)">
+        <i class="fa-solid fa-cube"></i> Minecraft 1.21+
+      </button>
+      <button class="version-btn" onclick="filtrarVersao('1.20', this)">
+        <i class="fa-solid fa-cube"></i> Minecraft 1.20+
+      </button>
+      <button class="version-btn" onclick="filtrarVersao('1.16', this)">
+        <i class="fa-solid fa-cube"></i> Minecraft 1.16 - 1.19
+      </button>
+    </div>
+
+    <!-- CARDS DE MODS/TEXTURAS -->
+    <div class="content-grid" id="texture-grid">
       
-      <!-- ITEM 1: GLOWY ORES (TEXTURA) -->
-      <div class="item-card">
+      <!-- CARD 1 -->
+      <div class="item-card" data-version="1.21 1.20">
+        <div>
+          <span class="card-badge badge-texture"><i class="fa-solid fa-paint-roller"></i> Textura HD</span>
+          <h3>Xnova Remastered</h3>
+          <p>Pacote de textura remasterizado para Minecraft, trazendo visual moderno e alta performance.</p>
+          <div class="info-row"><span>Formato:</span><span class="info-highlight">.zip / Resource Pack</span></div>
+          <div class="info-row"><span>Versões:</span><span class="info-highlight">1.20+ / 1.21+</span></div>
+        </div>
+        <a href="Xnova-Remastered.zip" download="Xnova-Remastered.zip" class="btn-action">
+          <i class="fa-solid fa-download"></i> Baixar Xnova Remastered
+        </a>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="item-card" data-version="1.21">
         <div>
           <span class="card-badge badge-texture"><i class="fa-solid fa-paint-roller"></i> Textura HD</span>
           <h3>Glowy Ores</h3>
-          <p>Faça os minérios do jogo brilharem no escuro para facilitar a mineração. Desenvolvido por ItzzMikey.</p>
-          
-          <div class="info-row">
-            <span>Formato:</span>
-            <span class="info-highlight">.zip / Resource Pack</span>
-          </div>
-          <div class="info-row">
-            <span>Versão Mínima:</span>
-            <span class="info-highlight">1.21.0+</span>
-          </div>
+          <p>Faça os minérios do jogo brilharem no escuro para facilitar a mineração.</p>
+          <div class="info-row"><span>Formato:</span><span class="info-highlight">.zip / Resource Pack</span></div>
+          <div class="info-row"><span>Versões:</span><span class="info-highlight">1.21+</span></div>
         </div>
-
-        <a href="Glowy-Ores.zip" download="Glowy-Ores.zip" class="btn-action" onclick="baixarArquivo(event, 'Glowy-Ores.zip')">
+        <a href="Glowy-Ores.zip" download="Glowy-Ores.zip" class="btn-action">
           <i class="fa-solid fa-download"></i> Baixar Glowy Ores
         </a>
       </div>
 
-      <!-- ITEM 2: GLOWY ORES SUBPACKS (MODPACK) -->
-      <div class="item-card">
+      <!-- CARD 3 -->
+      <div class="item-card" data-version="1.21">
         <div>
-          <span class="card-badge badge-mod"><i class="fa-solid fa-puzzle-piece"></i> Modpack / Subpack</span>
-          <h3>Glowy Ores (Subpacks)</h3>
-          <p>Versão completa contendo subpacks configuráveis com minérios normais e com contorno brilhante (PBR).</p>
-          
-          <div class="info-row">
-            <span>Subpacks:</span>
-            <span class="info-highlight">Normal & Outlined</span>
-          </div>
-          <div class="info-row">
-            <span>Versão Mínima:</span>
-            <span class="info-highlight">1.21.0+</span>
-          </div>
+          <span class="card-badge badge-mod"><i class="fa-solid fa-puzzle-piece"></i> Subpack</span>
+          <h3>Glowy Ores Subpacks</h3>
+          <p>Versão completa contendo subpacks configuráveis com minérios brilhantes.</p>
+          <div class="info-row"><span>Subpacks:</span><span class="info-highlight">Normal & Outlined</span></div>
+          <div class="info-row"><span>Versões:</span><span class="info-highlight">1.21+</span></div>
         </div>
-
-        <a href="Glowy-Ores-Subpacks.zip" download="Glowy-Ores-Subpacks.zip" class="btn-action" onclick="baixarArquivo(event, 'Glowy-Ores-Subpacks.zip')">
+        <a href="Glowy-Ores-Subpacks.zip" download="Glowy-Ores-Subpacks.zip" class="btn-action">
           <i class="fa-solid fa-download"></i> Baixar Subpacks
         </a>
       </div>
 
-      <!-- ITEM 3: XNOVA REMASTERED (TEXTURA) -->
-<div class="item-card">
-  <div>
-    <span class="card-badge badge-texture"><i class="fa-solid fa-paint-roller"></i> Textura HD</span>
-    <h3>Xnova Remastered</h3>
-    <p>Pacote de textura remasterizado para Minecraft, trazendo visual moderno, blocos mais limpos e alta performance para PvP/Survival.</p>
-    
-    <div class="info-row">
-      <span>Formato:</span>
-      <span class="info-highlight">.zip / Resource Pack</span>
+      <!-- CARD 4 -->
+      <div class="item-card" data-version="1.21 1.20 1.16">
+        <div>
+          <span class="card-badge badge-texture"><i class="fa-solid fa-paint-roller"></i> Textura HD</span>
+          <h3>Faithful 32x</h3>
+          <p>Melhora a resolução padrão do jogo mantendo a essência original do Minecraft.</p>
+          <div class="info-row"><span>Resolução:</span><span class="info-highlight">32x32</span></div>
+          <div class="info-row"><span>Versões:</span><span class="info-highlight">Todas</span></div>
+        </div>
+        <a href="Faithful-32x.zip" download="Faithful-32x.zip" class="btn-action">
+          <i class="fa-solid fa-download"></i> Baixar Faithful 32x
+        </a>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="item-card" data-version="1.21 1.20">
+        <div>
+          <span class="card-badge badge-texture"><i class="fa-solid fa-wand-magic-sparkles"></i> Visual</span>
+          <h3>Bare Bones</h3>
+          <p>Deixa o seu jogo idêntico aos trailers oficiais da Mojang, com cores bem vivas.</p>
+          <div class="info-row"><span>Estilo:</span><span class="info-highlight">Trailer Oficial</span></div>
+          <div class="info-row"><span>Versões:</span><span class="info-highlight">1.20+ / 1.21+</span></div>
+        </div>
+        <a href="BareBones.zip" download="BareBones.zip" class="btn-action">
+          <i class="fa-solid fa-download"></i> Baixar Bare Bones
+        </a>
+      </div>
+
+      <!-- CARD 6 -->
+      <div class="item-card" data-version="1.20 1.16">
+        <div>
+          <span class="card-badge badge-mod"><i class="fa-solid fa-bolt"></i> Mod de FPS</span>
+          <h3>Otimizador de FPS</h3>
+          <p>Aumenta os quadros (FPS) e retira lag em aparelhos e PCs fracos.</p>
+          <div class="info-row"><span>Efeito:</span><span class="info-highlight">+FPS / Sem Lag</span></div>
+          <div class="info-row"><span>Versões:</span><span class="info-highlight">1.16 até 1.20</span></div>
+        </div>
+        <a href="Otimizador-FPS.zip" download="Otimizador-FPS.zip" class="btn-action">
+          <i class="fa-solid fa-download"></i> Baixar Otimizador
+        </a>
+      </div>
+
     </div>
-    <div class="info-row">
-      <span>Tipo:</span>
-      <span class="info-highlight">Textura / Mod</span>
-    </div>
+  </section>
+
+  <!-- TOAST -->
+  <div id="toast" class="toast">
+    <i class="fa-solid fa-circle-check" style="color: #34d399;"></i>
+    <span id="toast-message">Copiado!</span>
   </div>
 
-  <!-- BOTÃO DE DOWNLOAD AQUI: -->
-  <a href="archive.zip" download="Xnova-Remastered.zip" class="btn-action" onclick="baixarArquivo(event, 'Xnova Remastered')">
-    <i class="fa-solid fa-download"></i> Baixar Xnova Remastered
-  </a>
-</div>
+  <script>
+    function copiar(texto) {
+      navigator.clipboard.writeText(texto);
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-message').textContent = 'Copiado para a área de transferência!';
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    function filtrarVersao(versao, elementoBotao) {
+      const botoes = document.querySelectorAll('.version-btn');
+      botoes.forEach(btn => btn.classList.remove('active'));
+      elementoBotao.classList.add('active');
+
+      const cards = document.querySelectorAll('#texture-grid .item-card');
+      cards.forEach(card => {
+        const versoesAtrib = card.getAttribute('data-version') || "";
+        if (versao === 'all' || versoesAtrib.includes(versao)) {
+          card.classList.remove('hide');
+        } else {
+          card.classList.add('hide');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
+
