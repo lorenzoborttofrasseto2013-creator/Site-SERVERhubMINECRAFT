@@ -92,6 +92,13 @@
 
     nav a:hover, nav a.active { color: var(--text-white); }
 
+    /* CONTAINER DOS BOTÕES SOCIAIS */
+    .header-buttons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
     .btn-tiktok {
       background: #000;
       color: white;
@@ -104,9 +111,38 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn-tiktok:hover {
+      transform: translateY(-2px);
+      border-color: #fe2c55;
     }
 
     .btn-tiktok i { color: #fe2c55; }
+
+    /* ESTILO DO BOTÃO DO DISCORD */
+    .btn-discord {
+      background: #5865F2;
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .btn-discord:hover {
+      transform: translateY(-2px);
+      background: #4752C4;
+    }
+
+    .btn-discord i { color: #ffffff; }
 
     /* HERO */
     .hero {
@@ -369,10 +405,16 @@
       <a href="#mods-e-texturas">Mods & Texturas</a>
     </nav>
 
-    <!-- LINK DO TIKTOK ATUALIZADO AQUI -->
-    <a href="https://www.tiktok.com/@serverhubminecraft" target="_blank" class="btn-tiktok">
-      <i class="fa-brands fa-tiktok"></i> TikTok
-    </a>
+    <!-- BOTÕES REDES SOCIAIS (TIKTOK E DISCORD) -->
+    <div class="header-buttons">
+      <a href="https://www.tiktok.com/@serverhubminecraft" target="_blank" class="btn-tiktok">
+        <i class="fa-brands fa-tiktok"></i> TikTok
+      </a>
+
+      <a href="https://discord.gg/gTRRdP4j5" target="_blank" class="btn-discord">
+        <i class="fa-brands fa-discord"></i> Discord
+      </a>
+    </div>
   </header>
 
   <!-- HERO SECTION -->
